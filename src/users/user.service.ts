@@ -1,11 +1,10 @@
 import { User } from "./user.model";
+import { UserRepository } from "./user.repository";
 
 export class UserService {
-    getUserById(id: string): User {
-        const user: User = {
-            id: '12345',
-            name: 'John Doe'
-        };
-        return user;
+    constructor(private userRepository: UserRepository) { }
+
+    getUserById(id: string): User | null {
+        return this.userRepository.getUserById(id);
     }
 }
