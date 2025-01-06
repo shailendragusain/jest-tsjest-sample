@@ -10,4 +10,8 @@ export class UserRepository {
 
         return user;
     }
+
+    getUsers(includeInactive: boolean): User[] {
+        return [];
+    }
 }

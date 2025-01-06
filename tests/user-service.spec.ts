@@ -19,7 +19,7 @@ describe('User Tests', () => {
     });
 
     it('should return user details when getUserById is called with a valid ID', () => {
-        const userId = "12345";
+        const userId = '1';
         const mockUser: User = { id: userId, name: 'John Doe', dateOfBirth: '20-06-1947' };
 
         // Mock the getUserById method to return the mock user
@@ -48,5 +48,41 @@ describe('User Tests', () => {
         expect(result).toBeNull();
         expect(userRepositoryMock.getUserById).toHaveBeenCalledTimes(1);
         expect(userRepositoryMock.getUserById).toHaveBeenCalledWith(userId);
+    });
+
+    it('should return list of all active users when getUsers is called with no parameter', () => {
+        // Arrange
+        const mockUsers: User[] = [
+            { id: '1', name: 'Test User 1' },
+            { id: '2', name: 'Test User 2' }
+        ];
+
+        // Mock the getUsers method to return list
+        userRepositoryMock.getUsers.mockReturnValue(mockUsers);
+
+        // Act
+        const result = userService.getUsers();
+
+        expect(result.length).toBeGreaterThanOrEqual(2);
+    });
+
+    it('should return list of all active users when getUsers is called with includeInactive parameter', () => {
+        // Arrange
+        const mockUsers: User[] = [
+            { id: '1', name: 'Test User 1', active: true },
+            { id: '2', name: 'Test User 2', active: true },
+            { id: '3', name: 'Test User 3', active: false }
+        ];
+
+        // Mock the getUsers method to return list
+        userRepositoryMock.getUsers.mockReturnValue(mockUsers.filter(x => x.active));
+
+        // Act
+        const result = userService.getUsers(true);
+
+        // Act
+        expect(result.length).toBeGreaterThanOrEqual(2);
+        expect(result[0]).toEqual(mockUsers[0]);
+        expect(result[1]).toEqual(mockUsers[1]);
     });
 });

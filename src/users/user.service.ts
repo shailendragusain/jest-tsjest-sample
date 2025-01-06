@@ -7,4 +7,8 @@ export class UserService {
     getUserById(id: string): User | null {
         return this.userRepository.getUserById(id);
     }
+
+    getUsers(includeInactive: boolean = false): User[] {
+        return this.userRepository.getUsers(includeInactive);
+    }
 }
