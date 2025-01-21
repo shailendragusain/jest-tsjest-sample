@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "esModuleInterop": true
   },
+  "include": [
+    "src/**/*"
+  ], // Include all .ts files in the src folder
   "exclude": [
-    "node_modules",
-    "public_html",
-    "test",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ]
+    "node_modules"
+  ],
+  // "exclude": [
+  //   "node_modules",
+  //   "public_html",
+  //   "test",
+  //   "**/*.spec.ts",
+  //   "**/*.test.ts"
+  // ]
 }

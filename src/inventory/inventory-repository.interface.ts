@@ -1,3 +1,5 @@
+import { Product } from "./product.model";
+
 export interface InventoryRepository {
-    getProducts(includeOutOfStocks: boolean);
+    getProducts(includeOutOfStocks: boolean): Product[];
 }

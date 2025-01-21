@@ -11,7 +11,7 @@ export class UserRepository {
         return user;
     }
 
-    getUsers(includeInactive: boolean): User[] {
+    getUsers(includeInactive: boolean = false): User[] {
         return [];
     }
 }
