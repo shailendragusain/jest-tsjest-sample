@@ -1,6 +1,6 @@
 import { InventoryRepository, InventoryService, Product } from "../src/core/inventory";
 
-jest.mock('../src/inventory/inventory-repository.interface.ts'); // Mock InventoryRepository
+jest.mock('../src/core/inventory/inventory-repository.interface.ts'); // Mock InventoryRepository
 
 describe('Inventory Tests', () => {
     let inventoryRepositoryMock: jest.Mocked<InventoryRepository>;

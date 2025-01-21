@@ -4,7 +4,7 @@
  * */
 import { User, UserRepository, UserService } from '../src/core/users';
 
-jest.mock('../src/users/user.repository.ts'); // Mock UserRepository
+jest.mock('../src/core/users/user.repository.ts'); // Mock UserRepository
 
 describe('User Tests', () => {
     let userRepositoryMock: jest.Mocked<UserRepository>;
