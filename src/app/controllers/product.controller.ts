@@ -20,7 +20,7 @@ class ProductController {
             const products = await this.productService.findAll();
             res.status(200).json(products);
         } catch (error: unknown) {
-
+            throw new Error(error as string);
         }
     }
 }
