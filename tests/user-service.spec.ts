@@ -2,7 +2,7 @@
  * NOTE: test and it are exactly the same thing. The keyword 'it' 
  * is used to add readability to the tests.
  * */
-import { User, UserRepository, UserService } from '../src/users';
+import { User, UserRepository, UserService } from '../src/core/users';
 
 jest.mock('../src/users/user.repository.ts'); // Mock UserRepository
 

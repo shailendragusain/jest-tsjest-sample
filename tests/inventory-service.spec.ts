@@ -1,4 +1,4 @@
-import { InventoryRepository, InventoryService, Product } from "../src/inventory";
+import { InventoryRepository, InventoryService, Product } from "../src/core/inventory";
 
 jest.mock('../src/inventory/inventory-repository.interface.ts'); // Mock InventoryRepository
 
