@@ -1,4 +1,4 @@
-import { InventoryRepository } from "./inventory-repository.interface";
+import { InventoryRepository } from ".";
 import { Product } from "./product.model";
 
 export class InventoryService {

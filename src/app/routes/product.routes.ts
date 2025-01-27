@@ -13,6 +13,7 @@ class ProductRoute {
     private configureRoutes(): void {
         this.router.post("/", this.productController.create.bind(this.productController));
         this.router.get("/", this.productController.findAll.bind(this.productController));
+        this.router.get("/:id", this.productController.findOne.bind(this.productController));
     }
 }
 

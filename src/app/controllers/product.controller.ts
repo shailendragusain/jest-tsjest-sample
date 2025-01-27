@@ -23,6 +23,16 @@ class ProductController {
             throw new Error(error as string);
         }
     }
+
+    async findOne(req: Request, res: Response) {
+        try {
+            const id = parseInt(req.params.id ?? "0");
+            const product = await this.productService.getById(id);
+            res.status(200).json(product);
+        } catch (error: unknown) {
+            throw new Error(error as string);
+        }
+    }
 }
 
 export default ProductController;
